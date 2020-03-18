@@ -2,29 +2,25 @@ package br.com.cargafacil;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.transition.Explode;
 import androidx.transition.Fade;
-import androidx.transition.Slide;
 import androidx.transition.TransitionManager;
 
 public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private TextView tv;
-    private View layoutDadosEmpresa;
+    private AppCompatImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
+        imageButton = toolbar.findViewById(R.id.infoBtn);
+        imageButton.setPressed(false);
         setSupportActionBar(toolbar);
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -44,18 +42,15 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     }
 
     public void toggleInfosEmpresa(View view) {
-
-//        TransitionInflater.from(this).inflateTransition(R.transition.custom);
         final ViewGroup layoutDadosEmpresa = this.findViewById(R.id.dados_empresa_include);
         if (layoutDadosEmpresa != null) {
             TransitionManager.beginDelayedTransition(layoutDadosEmpresa, new Fade());
+            imageButton.setPressed(!imageButton.isPressed());
             if (layoutDadosEmpresa.getVisibility() == View.VISIBLE) {
                 layoutDadosEmpresa.setVisibility(View.GONE);
-
             } else {
                 layoutDadosEmpresa.setVisibility(View.VISIBLE);
             }
-            ;
         }
     }
 
