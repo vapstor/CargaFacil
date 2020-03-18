@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/iniciar_pesagem"
+            android:title="@string/iniciar_pesagem"
+            android:icon="@drawable/ic_train">
+        </item>
+        <item
+            android:id="@+id/calculadora"
+            android:title="@string/calculadora"
+            android:icon="@drawable/ic_calculator">
+        </item>
+
+    </group>
+
+    <item
+        android:title="@string/outros"
+        android:id="@+id/submenu_outros">
+        <menu>
+            <item
+                android:id="@+id/historico"
+                android:title="@string/historico"
+                android:icon="@drawable/ic_history">
+            </item>
+            <item
+                android:id="@+id/administrativo"
+                android:icon="@drawable/ic_lock"
+                android:title="@string/administrativo">
+            </item>
+        </menu>
+
+    </item>
+
+</menu>

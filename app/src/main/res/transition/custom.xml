@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+    <changeBounds android:duration="@android:integer/config_mediumAnimTime">
+        <targets>
+            <target android:targetId="@+id/txtViewDadosDaEmpresa" />
+        </targets>
+    </changeBounds>
+    <!--    <fade android:startDelay="@android:integer/config_mediumAnimTime">-->
+    <!--        <targets>-->
+    <!--            <target android:targetId="@+id/"-->
+    <!--        </targets>-->
+    <!--    </fade>-->
+
+</transitionSet>

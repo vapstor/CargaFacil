@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CargaFacil</string>
+    <string name="logo">logo</string>
+    <string name="historico">Histórico</string>
+    <string name="outros">Outros</string>
+    <string name="calculadora">Calculadora</string>
+    <string name="iniciar_pesagem">Iniciar Pesagem</string>
+    <string name="administrativo">Administrativo</string>
+    <string name="openDrawer">Abrir</string>
+    <string name="fecharDrawer">Fechar</string>
+    <string name="nome_da_empresa">Nome: </string>
+    <string name="cnpj">61.795.966/0001-57</string>
+    <string name="endereco">Endereço: </string>
+    <string name="num_nota">Núm. Nota</string>
+    <string name="tom">TOM</string>
+    <string name="dados_da_empresa">Dados da Empresa</string>
+    <string name="pesagem">Pesagem</string>
+    <string name="placa">Placa</string>
+    <string name="data">Data</string>
+    <string name="hora">Hora</string>
+    <string name="tara_ex_20">Tara (Ex.: 20)</string>
+    <string name="calcular">calcular</string>
+    <string name="peso_bruto_ex_60">Peso Bruto (Ex.: 60)</string>
+    <string name="peso_liquido">Peso Líquido</string>
+    <string name="volume">Volume</string>
+    <string name="imprimir_comprovante">Imprimir Comprovante</string>
+</resources>
