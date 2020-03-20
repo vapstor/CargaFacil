@@ -49,17 +49,18 @@
   -  [x] Implementar Fade para revelar/esconder informações da empresa
   -  [x] Implementar Botões
   -  [ ] Implementar CheckBox "Salvar Placa" - savedInstanceState
-  -  [ ] Configurar TextViews Dinâmicas da Empresa com SharedPreferences
-  -  [ ] Configurar cálculo para valores do Input e consequentemente renderização
-  -  [ ] Configurar botões de Menu:
-        - [ ] Iniciar Nova Pesagem
+  -  [x] Configurar TextViews Dinâmicas da Empresa com SharedPreferences
+  -  [x] Configurar cálculo para valores do Input e consequentemente renderização
+  -  [x] Configurar botões de Menu:
+        - [x] Iniciar Nova Pesagem
         - [ ] Calculadora
         - [ ] Histórico
-        - [ ] Administrativo
+        - [x] Administrativo
       
 * Desenvolver Tela de Iniciar Nova Pesagem
-  - [ ] Confirmar possvel perda de informaçes
-  - [ ] Resetar tela (HOME)
+  - [x] Implementar inputs e validações
+  - [x] Cálculo de Pesagem Líquida
+  - [ ] Cálculo de Volume
 
 * Desenvolver Tela de Conexão à Impressora
   - [ ] Interface Bluetooth Serial
@@ -76,9 +77,10 @@
   - [ ] Implementar Função Excluir com Swipe
   
 * Desenvolver Tela Administrativa
-  - [ ] Proteger com Senha
-  - [ ] Implementar TextLayoutsInputs Para Edição dos Dados da Empresa
-  - [ ] Validar e Configurar novos dados em SharedPreferences
+  - [x] Implementar tela de login com Senha
+  - [ ] Validar tela de login
+  - [x] Implementar TextLayoutsInputs Para Edição dos Dados da Empresa
+  - [x] Validar e Configurar novos dados em SharedPreferences
 
 ## How to version
 
