@@ -51,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbarContainer"
             app:layout_constraintVertical_bias="0.33">
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -82,7 +82,7 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/lock_icon"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -114,7 +114,7 @@
                             android:textSize="16sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button"
                         style="@style/OutlinedButton"
                         android:layout_width="0dp"
@@ -129,7 +129,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/layoutInputPass" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

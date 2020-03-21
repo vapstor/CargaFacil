@@ -20,6 +20,10 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="materialDialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog</item>
+    </style>
+
     <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="windowNoTitle">true</item>
 

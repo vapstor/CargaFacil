@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -12,7 +13,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -23,6 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.transition.Fade;
 import androidx.transition.TransitionManager;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -34,6 +38,7 @@ import br.com.cargafacil.utils.Mask;
 
 import static br.com.cargafacil.utils.Utils.CONFIG_FILE;
 import static br.com.cargafacil.utils.Utils.elapsedTime;
+import static br.com.cargafacil.utils.Utils.sha256;
 
 public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener {
 
@@ -44,12 +49,89 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private AppCompatImageButton imageButton;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         instanceViews();
+        sharedPreferences = getSharedPreferences(CONFIG_FILE, Context.MODE_PRIVATE);
+
+        //define como falso e mostra diálogo toda vez que abrir o app, até que se cadastre uma senha.
+        boolean showDialog = sharedPreferences.getBoolean("showDialogCadastroSenha", true);
+        if (showDialog) {
+            /*/Dialog para cadastrar user senha**/
+            LayoutInflater layoutInflater = getLayoutInflater();
+            final View view = layoutInflater.inflate(R.layout.dialog_cadastro_adm, null);
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Cadastrar Administrador");
+            alertDialog.setCancelable(false);
+
+
+            AppCompatEditText inputUser = view.findViewById(R.id.inputUser);
+            TextInputLayout inputUserLayout = view.findViewById(R.id.layoutInputUser);
+            AppCompatEditText inputPass = view.findViewById(R.id.inputPass);
+            TextInputLayout inputPassLayout = view.findViewById(R.id.layoutInputPass);
+            AppCompatButton buttonCadastrar = view.findViewById(R.id.btnCadastrar);
+
+            buttonCadastrar.setOnClickListener(v -> {
+                String user = "", pass = "";
+                if (inputUser.getText() != null) {
+                    user = inputUser.getText().toString();
+                    if (user.isEmpty()) {
+                        inputUserLayout.setErrorEnabled(true);
+                        inputUserLayout.setError("preencha este campo");
+                    } else {
+                        inputUserLayout.setErrorEnabled(false);
+                    }
+                } else {
+                    inputUserLayout.setErrorEnabled(true);
+                    inputUserLayout.setError("preencha este campo");
+                }
+                if (inputPass.getText() != null) {
+                    pass = inputPass.getText().toString();
+                    if (pass.isEmpty()) {
+                        inputPassLayout.setErrorEnabled(true);
+                        inputPassLayout.setError("preencha este campo");
+                    } else {
+                        pass = sha256(pass);
+                        inputPassLayout.setErrorEnabled(false);
+                    }
+                } else {
+                    inputPassLayout.setErrorEnabled(true);
+                    inputPassLayout.setError("preencha este campo");
+                }
+
+                if (inputUserLayout.isErrorEnabled() || inputPassLayout.isErrorEnabled()) {
+                    Toast.makeText(this, "Verifique as informações!", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (efetuarCadastroAdm(user, pass)) {
+                        Toast.makeText(this, "Administrador cadastrado", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    } else {
+                        Toast.makeText(this, "Ocorreu um erro ao cadastrar", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+            alertDialog.setView(view);
+            /*/fim dialog cadastrar senha**/
+
+            new MaterialAlertDialogBuilder(this, R.style.Theme_MaterialComponents_Light_Dialog)
+                    .setTitle("Cadastrar Administrador")
+                    .setMessage("Atualmente o aplicativo não possui um administrador cadastrado. Deseja cadastrar um usuário e uma senha para efetuar alterações no aplicativo posteriormente?\n")
+                    .setPositiveButton("Cadastrar", (dialog, which) -> {
+                        alertDialog.show();
+                    })
+                    .setNegativeButton("Não", null)
+                    .setNeutralButton("Não mostrar novamente", (dialog, which) -> {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("showDialogCadastroSenha", false);
+                        editor.apply();
+                    })
+                    .show();
+        }
 
         imageButton.setVisibility(View.VISIBLE);
         setSupportActionBar(toolbar);
@@ -366,6 +448,23 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
                     imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 }
             }).start();
+        }
+    }
+
+    public boolean efetuarCadastroAdm(String user, String encryptedPass) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        try {
+            editor.putBoolean("showDialogCadastroSenha", false);
+            editor.putString("user_adm", user);
+            editor.putString("pass_adm", encryptedPass);
+            editor.apply();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            editor.putBoolean("showDialogCadastroSenha", true);
+            editor.putString("user_adm", "");
+            editor.putString("pass_adm", "");
+            return false;
         }
     }
 }

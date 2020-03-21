@@ -246,6 +246,20 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
         editor.putString("estado", estado);
         editor.apply();
         Toast.makeText(this, "Salvo com Sucesso!", Toast.LENGTH_SHORT).show();
+        goToMain();
+    }
+
+    private void goToMain() {
+        Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(PainelAdministrativoActivity.this).toBundle();
+        Intent intent = new Intent(PainelAdministrativoActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        startActivity(intent, bundle);
+    }
+
+    @Override
+    public void onBackPressed() {
+        goToMain();
+        super.onBackPressed();
+
     }
 
     @Override

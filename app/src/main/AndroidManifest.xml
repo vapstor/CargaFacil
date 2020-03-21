@@ -7,16 +7,13 @@
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:launchMode="singleTop"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".LoginAdmActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".PainelAdministrativoActivity"
-            android:launchMode="singleTop" />
+        <activity android:name=".LoginAdmActivity" />
+        <activity android:name=".PainelAdministrativoActivity" />
         <activity
             android:name=".PesagemActivity"
             android:theme="@style/Dialog"

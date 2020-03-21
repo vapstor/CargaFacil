@@ -18,14 +18,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#5400A53F"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="333dp">
-
-    </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

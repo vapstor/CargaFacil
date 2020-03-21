@@ -48,6 +48,7 @@
     <string name="campo_redondo">Campo Redondo</string>
     <string name="s_o_pedro_da_aldeia">São Pedro da Aldeia</string>
     <string name="rj">RJ</string>
+    <string name="cadastrar">Cadastrar</string>
     <string-array name="ufs">
         <item>AC</item>
         <item>AL</item>
