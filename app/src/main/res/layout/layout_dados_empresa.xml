@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_dados_empresa"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/shape_panel_bordered_all">
 
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtViewDadosDaEmpresa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/nomeEmpresa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -42,20 +41,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewDadosDaEmpresa" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/CNPJ"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_light"
-        android:text="CNPJ: "
+        android:text="@string/cnpj_"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/TxtViewEndereco"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomeEmpresa" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TxtViewEndereco"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -69,155 +68,155 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CNPJ" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewNumero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Núm.:"
+        android:text="@string/n_m"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/TxtViewEndereco"
         app:layout_constraintStart_toStartOf="@+id/TxtViewEndereco"
         app:layout_constraintTop_toBottomOf="@+id/TxtViewEndereco" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtViewBairro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Bairro:"
+        android:text="@string/bairro"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewNumero"
         app:layout_constraintStart_toStartOf="@+id/textViewNumero"
         app:layout_constraintTop_toBottomOf="@+id/textViewNumero" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtViewCEP"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_light"
-        android:text="CEP:"
+        android:text="@string/cep"
         android:textSize="13sp"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintStart_toEndOf="@+id/txtViewValueNum"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewValueEndereco" />
 
-    <TextView
-        android:id="@+id/textView11"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewCidade"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Cidade"
+        android:text="@string/cidade"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/txtViewBairro"
         app:layout_constraintStart_toStartOf="@+id/txtViewBairro"
         app:layout_constraintTop_toBottomOf="@+id/txtViewBairro" />
 
-    <TextView
-        android:id="@+id/textView12"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Pedreira Campo Redondo LTDA."
+        android:text="@string/pedreira_campo_redondo_ltda"
         app:layout_constraintBottom_toBottomOf="@+id/nomeEmpresa"
         app:layout_constraintStart_toEndOf="@+id/nomeEmpresa"
         app:layout_constraintTop_toTopOf="@+id/nomeEmpresa" />
 
-    <TextView
-        android:id="@+id/textView13"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueCNPJ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="14.766.790/0001-25"
+        android:text="@string/_14_766_790_0001_25"
         app:layout_constraintBottom_toBottomOf="@+id/CNPJ"
         app:layout_constraintStart_toEndOf="@+id/CNPJ"
         app:layout_constraintTop_toTopOf="@+id/CNPJ" />
 
-    <TextView
-        android:id="@+id/textView14"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueEndereco"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_condensed_regular"
         android:singleLine="true"
-        android:text="Logradouro Campo Redondo"
+        android:text="@string/logradouro_campo_redondo"
         app:layout_constraintBottom_toBottomOf="@+id/TxtViewEndereco"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/txtViewValueCNPJ"
         app:layout_constraintTop_toTopOf="@+id/TxtViewEndereco"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView15"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueNum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="1320"
+        android:text="@string/_1320"
         app:layout_constraintBottom_toBottomOf="@+id/textViewNumero"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintStart_toStartOf="@+id/txtViewValueEndereco"
         app:layout_constraintTop_toTopOf="@+id/textViewNumero"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView16"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueCEP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="28940-000"
+        android:text="@string/_28940_000"
         app:layout_constraintStart_toEndOf="@+id/txtViewCEP"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/txtViewValueEndereco" />
 
-    <TextView
-        android:id="@+id/textView17"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewEstado"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/roboto_light"
-        android:text="UF:"
+        android:text="@string/uf_"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView19"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toTopOf="@+id/textView19" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtViewValueCidade"
+        app:layout_constraintStart_toEndOf="@+id/txtViewValueCidade"
+        app:layout_constraintTop_toTopOf="@+id/txtViewValueCidade" />
 
-    <TextView
-        android:id="@+id/textView18"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueBairro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Campo Redondo"
+        android:text="@string/campo_redondo"
         app:layout_constraintBottom_toBottomOf="@+id/txtViewBairro"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="@+id/txtViewValueNum"
         app:layout_constraintTop_toTopOf="@+id/txtViewBairro" />
 
-    <TextView
-        android:id="@+id/textView19"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueCidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="São Pedro da Aldeia"
-        app:layout_constraintBottom_toBottomOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toTopOf="@+id/textView11" />
+        android:text="@string/s_o_pedro_da_aldeia"
+        app:layout_constraintBottom_toBottomOf="@+id/txtViewCidade"
+        app:layout_constraintStart_toStartOf="@+id/txtViewValueBairro"
+        app:layout_constraintTop_toTopOf="@+id/txtViewCidade" />
 
-    <TextView
-        android:id="@+id/textView20"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewValueUF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="RJ"
-        app:layout_constraintBottom_toBottomOf="@+id/textView17"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="@+id/textView17" />
+        android:text="@string/rj"
+        app:layout_constraintBottom_toBottomOf="@+id/txtViewEstado"
+        app:layout_constraintStart_toEndOf="@+id/txtViewEstado"
+        app:layout_constraintTop_toTopOf="@+id/txtViewEstado" />
 </androidx.constraintlayout.widget.ConstraintLayout>

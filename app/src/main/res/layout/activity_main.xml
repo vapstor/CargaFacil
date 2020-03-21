@@ -10,373 +10,309 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/screenContainer"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbarContainer"
+            android:id="@+id/screenContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:animationCache="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <include
-                android:id="@+id/toolbarInclude"
-                layout="@layout/toolbar"
-                android:layout_width="0dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toolbarContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/contentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="64dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarContainer">
-
-            <ScrollView
-                android:id="@+id/scrollLayoutPesagem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
                 android:animateLayoutChanges="true"
                 android:animationCache="true"
-                android:background="@drawable/shape_panel_bordered_all"
-                android:fillViewport="true"
-                android:fitsSystemWindows="true"
-                android:orientation="vertical"
-                android:paddingStart="4dp"
-                android:paddingEnd="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dados_empresa_include">
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/toolbarInclude"
+                    layout="@layout/toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarContainer"
+                app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/scrollViewContent"
-                    android:layout_width="match_parent"
+                    android:id="@+id/layoutPesagem"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:animateLayoutChanges="true"
+                    android:animationCache="true"
+                    android:background="@drawable/shape_panel_bordered_all"
+                    android:orientation="vertical"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dados_empresa_include">
 
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="wrap_content"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/scrollViewContent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/roboto_condensed_bold"
-                        android:text="@string/pesagem"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17sp"
+                        android:paddingBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/layoutInputPlaca"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/title">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/appCompatEditText"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_light"
-                            android:hint="@string/placa"
-                            android:inputType="text"
-                            android:maxLength="7"
-                            android:textSize="16sp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="@string/pesagem"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/divider" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutData"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
-                        app:layout_constraintEnd_toStartOf="@+id/textInputLayoutHora"
-                        app:layout_constraintStart_toStartOf="@+id/layoutInputPlaca"
-                        app:layout_constraintTop_toBottomOf="@+id/layoutInputPlaca">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/texttInputLayoutPlaca"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_light"
-                            android:hint="@string/data"
-                            android:inputType="numberSigned"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/title">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutHora"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        app:layout_constraintEnd_toEndOf="@+id/layoutInputPlaca"
-                        app:layout_constraintStart_toEndOf="@+id/textInputLayoutData"
-                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutData">
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/placaInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="@string/placa"
+                                android:inputType="text"
+                                android:maxLength="8"
+                                android:textAllCaps="true"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutData"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="236dp"
-                            android:fontFamily="@font/roboto_light"
-                            android:hint="@string/hora"
-                            android:inputType="numberSigned"
+                            android:layout_marginEnd="4dp"
+                            android:orientation="horizontal"
+                            app:endIconDrawable="@drawable/ic_calendar"
+                            app:endIconMode="custom"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayoutHora"
+                            app:layout_constraintStart_toStartOf="@+id/texttInputLayoutPlaca"
+                            app:layout_constraintTop_toBottomOf="@+id/texttInputLayoutPlaca">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/dataInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="@string/data"
+                                android:inputType="numberSigned"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutHora"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            app:endIconDrawable="@drawable/ic_time"
+                            app:endIconMode="custom"
+                            app:layout_constraintEnd_toEndOf="@+id/texttInputLayoutPlaca"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayoutData"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayoutData">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/horaInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="@string/hora"
+                                android:inputType="numberSigned"
+                                android:textAllCaps="true"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutNumNota"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutHora"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutData"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutData">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/notaInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="@string/num_nota"
+                                android:inputType="numberSigned"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutTara"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintEnd_toStartOf="@+id/textView5"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutNumNota"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNumNota">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/taraInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="Tara"
+                                android:inputType="numberSigned"
+                                android:textAllCaps="true"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="@string/tom"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutTara"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayoutPesoBruto"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayoutTara"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayoutTara"
+                            app:layout_constraintVertical_bias="0.65" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnCalcular"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:onClick="validateInfos"
+                            android:text="@android:string/ok"
                             android:textAllCaps="true"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:textAppearance="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textSize="14sp"
+                            android:theme="@style/OutlinedButton"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/textView"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutTara"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPesoBruto" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutNumNota"
-                        android:layout_width="0dp"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutData"
-                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutData"
-                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutData">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutPesoBruto"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="236dp"
-                            android:fontFamily="@font/roboto_light"
-                            android:hint="@string/num_nota"
-                            android:inputType="numberSigned"
-                            android:textSize="16sp" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutTara"
+                            app:layout_constraintEnd_toStartOf="@+id/textView"
+                            app:layout_constraintStart_toEndOf="@+id/textView5"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayoutTara">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutTara"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        app:layout_constraintEnd_toStartOf="@+id/textView5"
-                        app:layout_constraintStart_toEndOf="@+id/textInputLayoutNumNota"
-                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutNumNota">
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/pbtInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="Peso Bruto"
+                                android:inputType="numberSigned"
+                                android:textSize="16sp" />
 
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:layout_width="match_parent"
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--                    <View-->
+                        <!--                        android:id="@+id/divider"-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="3dp"-->
+                        <!--                        android:layout_marginStart="32dp"-->
+                        <!--                        android:layout_marginTop="16dp"-->
+                        <!--                        android:layout_marginEnd="32dp"-->
+                        <!--                        android:background="?android:attr/listDivider"-->
+                        <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPesoBruto" />-->
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="236dp"
-                            android:fontFamily="@font/roboto_light"
-                            android:hint="@string/tara_ex_20"
-                            android:inputType="numberSigned"
-                            android:textAllCaps="true"
-                            android:textSize="16sp" />
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:text="@string/tom"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPesoBruto"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayoutPesoBruto"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayoutPesoBruto"
+                            app:layout_constraintVertical_bias="0.65" />
 
-                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_condensed_bold"
-                        android:text="@string/tom"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutTara"
-                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutHora"
-                        app:layout_constraintStart_toEndOf="@+id/textInputLayoutTara"
-                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutTara"
-                        app:layout_constraintVertical_bias="0.65" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnCalcular"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="16dp"
-                        android:background="@null"
-                        android:text="@android:string/ok"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-                        android:textSize="14sp"
-                        android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPesoBruto"
-                        app:layout_constraintEnd_toEndOf="@+id/textView5"
-                        app:layout_constraintStart_toEndOf="@+id/textView4"
-                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutPesoBruto" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutPesoBruto"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutNumNota"
-                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutNumNota"
-                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNumNota">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_condensed_regular"
-                            android:hint="@string/peso_bruto_ex_60"
-                            android:inputType="numberSigned"
-                            android:textSize="16sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <View
-                        android:id="@+id/divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="32dp"
-                        android:background="?android:attr/listDivider"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPesoBruto" />
-
-                    <TextView
-                        android:id="@+id/txtViewPesoLiquido"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="32dp"
-                        android:fontFamily="@font/roboto_condensed_bold"
-                        android:text="@string/peso_liquido"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textSize="17sp"
-                        app:layout_constraintEnd_toStartOf="@+id/textView3"
-                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutPesoBruto"
-                        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_condensed_bold"
-                        android:text="@string/volume"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textSize="17sp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView5"
-                        app:layout_constraintStart_toEndOf="@+id/txtViewPesoLiquido"
-                        app:layout_constraintTop_toTopOf="@+id/txtViewPesoLiquido" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_condensed_bold"
-                        android:text="@string/tom"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPesoBruto"
-                        app:layout_constraintStart_toEndOf="@+id/textInputLayoutNumNota"
-                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutPesoBruto"
-                        app:layout_constraintVertical_bias="0.65" />
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="43.5"
-                        android:textSize="22sp"
-                        app:layout_constraintEnd_toEndOf="@+id/txtViewPesoLiquido"
-                        app:layout_constraintStart_toStartOf="@+id/txtViewPesoLiquido"
-                        app:layout_constraintTop_toBottomOf="@+id/txtViewPesoLiquido" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_condensed_regular"
-                        android:text="@string/tom"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        app:layout_constraintEnd_toEndOf="@+id/textView7"
-                        app:layout_constraintStart_toStartOf="@+id/textView7"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="43.5"
-                        android:textSize="22sp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView3"
-                        app:layout_constraintStart_toStartOf="@+id/textView3"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_condensed_regular"
-                        android:text="@string/tom"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        app:layout_constraintEnd_toEndOf="@+id/textView9"
-                        app:layout_constraintStart_toStartOf="@+id/textView9"
-                        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-
-                        android:id="@+id/btnImprimir"
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="16dp"
-                        android:backgroundTint="@color/colorPrimary"
-                        android:text="@string/imprimir_comprovante"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/white"
-                        android:textSize="15sp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView3"
-                        app:layout_constraintStart_toStartOf="@+id/txtViewPesoLiquido"
-                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </ScrollView>
 
-            <include
-                android:id="@+id/dados_empresa_include"
-                layout="@layout/layout_dados_empresa"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:animateLayoutChanges="true"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <include
+                    android:id="@+id/dados_empresa_include"
+                    layout="@layout/layout_dados_empresa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:animateLayoutChanges="true"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_nav" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

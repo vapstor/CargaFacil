@@ -6,9 +6,33 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 
     <style name="AppTheme.Home" parent="Theme.MaterialComponents.DayNight">
         <item name="android:windowExitTransition">@android:transition/fade</item>
     </style>
+
+    <style name="OutlinedButton" parent="TextAppearance.AppCompat.Button">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="rippleColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+
+        <!--        <item name="android:windowEnterAnimation">@anim/slide_up</item>-->
+        <item name="android:windowAnimationStyle">@style/Dialog.Animation</item>
+    </style>
+
+    <style name="Dialog.Animation" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowEnterAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="Spinner" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
 </resources>

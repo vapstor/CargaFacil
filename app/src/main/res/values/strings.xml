@@ -9,10 +9,10 @@
     <string name="openDrawer">Abrir</string>
     <string name="fecharDrawer">Fechar</string>
     <string name="nome_da_empresa">Nome: </string>
-    <string name="cnpj">61.795.966/0001-57</string>
+    <string name="cnpj">61.795.966/0001–57</string>
     <string name="endereco">Endereço: </string>
     <string name="num_nota">Núm. Nota</string>
-    <string name="tom">TOM</string>
+    <string name="tom">TON</string>
     <string name="dados_da_empresa">Dados da Empresa</string>
     <string name="pesagem">Pesagem</string>
     <string name="placa">Placa</string>
@@ -24,4 +24,57 @@
     <string name="peso_liquido">Peso Líquido</string>
     <string name="volume">Volume</string>
     <string name="imprimir_comprovante">Imprimir Comprovante</string>
+    <string name="resultado_da_pesagem">Resultado da Pesagem</string>
+    <string name="m_cubo">M³</string>
+    <string name="pass_hint">* * * * * *</string>
+    <string name="usu_rio">Usuário</string>
+    <string name="entrar">Entrar</string>
+    <string name="lock_icon">Lock Icon</string>
+    <string name="salvar">salvar</string>
+    <string name="endere_o">Endereço</string>
+    <string name="uf">UF</string>
+    <string name="cone_infos_da_empresa">Ícone Infos Da Empresa</string>
+    <string name="n_m">Núm.:</string>
+    <string name="cnpj_">CNPJ:</string>
+    <string name="bairro">Bairro:</string>
+    <string name="cep">CEP:</string>
+    <string name="cidade">Cidade</string>
+    <string name="pedreira_campo_redondo_ltda">Pedreira Campo Redondo LTDA.</string>
+    <string name="_14_766_790_0001_25">14.766.790/0001-25</string>
+    <string name="logradouro_campo_redondo">Logradouro Campo Redondo</string>
+    <string name="_1320">1320</string>
+    <string name="_28940_000">28940-000</string>
+    <string name="uf_">UF:</string>
+    <string name="campo_redondo">Campo Redondo</string>
+    <string name="s_o_pedro_da_aldeia">São Pedro da Aldeia</string>
+    <string name="rj">RJ</string>
+    <string-array name="ufs">
+        <item>AC</item>
+        <item>AL</item>
+        <item>AM</item>
+        <item>AP</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MG</item>
+        <item>MS</item>
+        <item>MT</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>PR</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>RS</item>
+        <item>SC</item>
+        <item>SE</item>
+        <item>SP</item>
+        <item>TO</item>
+    </string-array>
 </resources>

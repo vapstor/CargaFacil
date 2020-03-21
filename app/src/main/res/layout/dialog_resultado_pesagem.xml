@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_resultado_calculo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_panel_bordered_all"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_panel_bordered_all"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@null"
+                android:elevation="1dp"
+                android:onClick="dismissDialog"
+                android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_close" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/TitleDialogResultado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
+                android:text="@string/resultado_da_pesagem"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:text="@string/m_cubo"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="@+id/valorVolume"
+                app:layout_constraintStart_toStartOf="@+id/valorVolume"
+                app:layout_constraintTop_toBottomOf="@+id/valorVolume" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnImprimir"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="imprimir"
+                android:text="@string/imprimir_comprovante"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtViewPesoLiquido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/peso_liquido"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@+id/hora"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/hora"
+                app:layout_constraintTop_toBottomOf="@+id/hora" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valorPesoLiquido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="43.5"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/txtViewPesoLiquido"
+                app:layout_constraintStart_toStartOf="@+id/txtViewPesoLiquido"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewPesoLiquido" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewVolume"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/volume"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@+id/pbt"
+                app:layout_constraintStart_toEndOf="@+id/hora"
+                app:layout_constraintTop_toTopOf="@+id/txtViewPesoLiquido" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:text="@string/tom"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="@+id/valorPesoLiquido"
+                app:layout_constraintStart_toStartOf="@+id/valorPesoLiquido"
+                app:layout_constraintTop_toBottomOf="@+id/valorPesoLiquido" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/placa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/placa"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numNota" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valorVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="43.5"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewVolume"
+                app:layout_constraintStart_toStartOf="@+id/textViewVolume"
+                app:layout_constraintTop_toBottomOf="@+id/textViewVolume" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/data"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/tara"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placa" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/hora"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/pbt"
+                app:layout_constraintStart_toStartOf="@+id/data"
+                app:layout_constraintTop_toTopOf="@+id/data" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tara"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="Tara"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/data"
+                app:layout_constraintTop_toTopOf="@+id/data" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pbt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="PBT"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hora"
+                app:layout_constraintTop_toTopOf="@+id/hora" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="1dp"
+                android:theme="@style/Widget.AppCompat.ProgressBar"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnImprimir"
+                app:layout_constraintStart_toStartOf="@+id/btnImprimir"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/numNota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/num_nota"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
