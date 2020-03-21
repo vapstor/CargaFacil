@@ -7,7 +7,7 @@
   <p align="center">
     <img src="https://ci.appveyor.com/api/projects/status/g8d58ipi3auqdtrk/branch/master?svg=true" alt="Config. Device Activity Passing." />
      <!--<img src="https://ci.appveyor.com/api/projects/status/216h1g17b8ir009t?svg=true" alt="Config. Device Activity Crashing." /> -->
-    <img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Current APP version." />  
+    <img src="https://img.shields.io/badge/version-1.11.2-blue.svg" alt="Current APP version." />  
   </p>
 </p>
 
@@ -28,8 +28,11 @@
 ```
 
 ## 🚀 ScreensShots
-
-
+<div style="float: left">
+  <img src="app/src/main/res/screenshots/screen3.png?raw=true" width="250"/>
+  <img src="app/src/main/res/screenshots/screen2.png?raw=true" width="250"/> 
+  <img src="app/src/main/res/screenshots/screen1.png?raw=true" width="250"/> 
+</div>
 
 ## 👏 Todo (Desenvolvimento)
 
@@ -46,17 +49,18 @@
   -  [x] Implementar Fade para revelar/esconder informações da empresa
   -  [x] Implementar Botões
   -  [ ] Implementar CheckBox "Salvar Placa" - savedInstanceState
-  -  [ ] Configurar TextViews Dinâmicas da Empresa com SharedPreferences
-  -  [ ] Configurar cálculo para valores do Input e consequentemente renderização
-  -  [ ] Configurar botões de Menu:
-        - [ ] Iniciar Nova Pesagem
+  -  [x] Configurar TextViews Dinâmicas da Empresa com SharedPreferences
+  -  [x] Configurar cálculo para valores do Input e consequentemente renderização
+  -  [x] Configurar botões de Menu:
+        - [x] Iniciar Nova Pesagem
         - [ ] Calculadora
         - [ ] Histórico
-        - [ ] Administrativo
+        - [x] Administrativo
       
 * Desenvolver Tela de Iniciar Nova Pesagem
-  - [ ] Confirmar possvel perda de informaçes
-  - [ ] Resetar tela (HOME)
+  - [x] Implementar inputs e validações
+  - [x] Cálculo de Pesagem Líquida
+  - [ ] Cálculo de Volume
 
 * Desenvolver Tela de Conexão à Impressora
   - [ ] Interface Bluetooth Serial
@@ -73,9 +77,10 @@
   - [ ] Implementar Função Excluir com Swipe
   
 * Desenvolver Tela Administrativa
-  - [ ] Proteger com Senha
-  - [ ] Implementar TextLayoutsInputs Para Edição dos Dados da Empresa
-  - [ ] Validar e Configurar novos dados em SharedPreferences
+  - [x] Implementar tela de login com Senha
+  - [ ] Validar tela de login
+  - [x] Implementar TextLayoutsInputs Para Edição dos Dados da Empresa
+  - [x] Validar e Configurar novos dados em SharedPreferences
 
 ## How to version
 
