@@ -64,11 +64,9 @@ public class LoginAdmActivity extends AppCompatActivity implements DrawerLayout.
                     startActivity(intent, bundle);
                     break;
                 case R.id.calculadora:
-                    Toast.makeText(LoginAdmActivity.this, "Calculadora!", Toast.LENGTH_SHORT).show();
-                    break;
                 case R.id.historico:
-                    visualizarHistorico();
-                    Toast.makeText(LoginAdmActivity.this, "Histórico!", Toast.LENGTH_SHORT).show();
+//                    visualizarHistorico();
+                    Toast.makeText(LoginAdmActivity.this, "Não Implementado!", Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     Toast.makeText(this, "Menu Desconhecido!", Toast.LENGTH_SHORT).show();
@@ -130,9 +128,9 @@ public class LoginAdmActivity extends AppCompatActivity implements DrawerLayout.
     }
 
     private void visualizarHistorico() {
-        Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(LoginAdmActivity.this).toBundle();
-        Intent intent = new Intent(LoginAdmActivity.this, LoginAdmActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent, bundle);
+//        Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(LoginAdmActivity.this).toBundle();
+//        Intent intent = new Intent(LoginAdmActivity.this, LoginAdmActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        startActivity(intent, bundle);
     }
 
     @Override
