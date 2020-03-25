@@ -24,6 +24,11 @@
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog</item>
     </style>
 
+    <style name="customMaterialDialogLight" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
     <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="windowNoTitle">true</item>
 

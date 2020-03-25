@@ -26,7 +26,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:animationCache="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -81,7 +80,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -103,13 +102,14 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             app:counterEnabled="true"
-                            app:counterMaxLength="8"
+                            app:counterMaxLength="7"
+                            app:counterTextColor="@color/colorPrimary"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/title">
 
-<!--                            app:counterTextAppearance="@style/CounterText"-->
+                            <!--                            app:counterTextAppearance="@style/CounterText"-->
 
                             <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/placaInput"
@@ -117,9 +117,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:hint="@string/placa"
-                                android:inputType="text"
-                                android:maxLength="8"
-                                android:textAllCaps="true"
+                                android:inputType="text|textNoSuggestions"
+                                android:maxLength="7"
                                 android:textSize="16sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
@@ -143,7 +142,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:hint="@string/data"
-                                android:inputType="numberSigned"
+                                android:inputType="number|textNoSuggestions"
                                 android:textSize="16sp" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -165,8 +164,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:hint="@string/hora"
-                                android:inputType="numberSigned"
-                                android:textAllCaps="true"
+                                android:inputType="number|textNoSuggestions"
                                 android:textSize="16sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -185,7 +183,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:hint="@string/num_nota"
-                                android:inputType="numberSigned"
+                                android:inputType="number|textNoSuggestions"
                                 android:textSize="16sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -204,8 +202,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:hint="Tara"
-                                android:inputType="numberSigned"
-                                android:textAllCaps="true"
+                                android:inputType="number|textNoSuggestions"
+                                android:maxLength="7"
                                 android:textSize="16sp" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -228,18 +226,35 @@
                             android:id="@+id/btnCalcular"
                             android:layout_width="0dp"
                             android:layout_height="48dp"
-                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="24dp"
                             android:layout_marginBottom="8dp"
                             android:onClick="validateInfos"
-                            android:text="@android:string/ok"
-                            android:textAllCaps="true"
+                            android:text="@string/calcular"
                             android:textAppearance="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:textSize="14sp"
                             android:theme="@style/OutlinedButton"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/textView"
-                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutTara"
+                            app:layout_constraintStart_toEndOf="@+id/btnLimpar"
                             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPesoBruto" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnLimpar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/background_gray"
+                            android:fontFamily="@font/roboto_bold"
+                            android:onClick="resetInfos"
+                            android:text="@string/resetar"
+                            android:textAllCaps="true"
+                            android:textAppearance="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutTara"
+                            app:layout_constraintTop_toTopOf="@+id/btnCalcular" />
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputLayoutPesoBruto"
@@ -256,7 +271,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
                                 android:hint="Peso Bruto"
-                                android:inputType="numberSigned"
+                                android:inputType="numberSigned|textNoSuggestions"
+                                android:maxLength="7"
                                 android:textSize="16sp" />
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -309,6 +325,8 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </ScrollView>
 
     <com.google.android.material.navigation.NavigationView

@@ -25,6 +25,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import br.com.cargafacil.utils.Mask;
 
 import static br.com.cargafacil.utils.Utils.CONFIG_FILE;
+import static br.com.cargafacil.utils.Utils.formatValuesToInteger;
 
 public class PainelAdministrativoActivity extends AppCompatActivity implements DrawerLayout.DrawerListener {
 
@@ -32,16 +33,15 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
     private Toolbar toolbar;
     private NavigationView navigationView;
     private String[] arrayEstadosBR;
-    private String nome, cnpj, endereco, numero, bairro, cep, cidade, estado;
-    private AppCompatEditText inputNome, inputCNPJ, inputEndereco, inputNumero, inputBairro, inputCEP, inputCidade;
-    private TextInputLayout layoutNome, layoutCNPJ, layoutEndereco, layoutNumero, layoutBairro, layoutCEP, layoutCidade, layoutEstado;
+    private String nome, cnpj, endereco, numero, bairro, cep, cidade, estado, produto, pesoProduto;
+    private AppCompatEditText inputNome, inputCNPJ, inputEndereco, inputNumero, inputBairro, inputCEP, inputCidade, inputProduto, inputPesoProduto;
+    private TextInputLayout layoutNome, layoutCNPJ, layoutEndereco, layoutNumero, layoutBairro, layoutCEP, layoutCidade, layoutEstado, layoutProduto, layoutPesoProduto;
     private AutoCompleteTextView inputEstado;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        boolean logado = getSharedPreferences(CONFIG_FILE, Context.MODE_PRIVATE).getBoolean("logado", );
 
         setContentView(R.layout.painel_administrativo);
 
@@ -90,6 +90,7 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutNome.setErrorEnabled(false);
             }
         } else {
+            layoutNome.setErrorEnabled(true);
             Toast.makeText(this, "Nome Nulo!", Toast.LENGTH_SHORT).show();
         }
 
@@ -106,7 +107,8 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutCNPJ.setErrorEnabled(false);
             }
         } else {
-            Toast.makeText(this, "CNPJ Nulo!", Toast.LENGTH_SHORT).show();
+            layoutCNPJ.setErrorEnabled(true);
+            Toast.makeText(this, "CNPJ nulo!", Toast.LENGTH_SHORT).show();
         }
 
         //Endereco
@@ -119,20 +121,17 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutEndereco.setErrorEnabled(false);
             }
         } else {
-            Toast.makeText(this, "Endereço Nulo!", Toast.LENGTH_SHORT).show();
+            layoutEndereco.setErrorEnabled(true);
+            Toast.makeText(this, "Endereço nulo!", Toast.LENGTH_SHORT).show();
         }
 
         //Numero
         if (inputNumero.getText() != null) {
             numero = inputNumero.getText().toString();
-            if (numero.isEmpty()) {
-                layoutNumero.setErrorEnabled(true);
-                layoutNumero.setError("preencha o número");
-            } else {
-                layoutNumero.setErrorEnabled(false);
-            }
+            layoutNumero.setErrorEnabled(false);
         } else {
-            Toast.makeText(this, "Numero Nulo!", Toast.LENGTH_SHORT).show();
+            layoutNumero.setErrorEnabled(true);
+            Toast.makeText(this, "Numero nulo!", Toast.LENGTH_SHORT).show();
         }
 
         //Bairro
@@ -145,7 +144,8 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutBairro.setErrorEnabled(false);
             }
         } else {
-            Toast.makeText(this, "Bairro Nulo!", Toast.LENGTH_SHORT).show();
+            layoutBairro.setErrorEnabled(true);
+            Toast.makeText(this, "Bairro nulo!", Toast.LENGTH_SHORT).show();
         }
 
         //CEP
@@ -161,7 +161,8 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutCEP.setErrorEnabled(false);
             }
         } else {
-            Toast.makeText(this, "CEP Nulo!", Toast.LENGTH_SHORT).show();
+            layoutCEP.setErrorEnabled(true);
+            Toast.makeText(this, "CEP nulo!", Toast.LENGTH_SHORT).show();
         }
 
         //Cidade
@@ -174,7 +175,8 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutCidade.setErrorEnabled(false);
             }
         } else {
-            Toast.makeText(this, "Cidade Nula!", Toast.LENGTH_SHORT).show();
+            layoutCidade.setErrorEnabled(true);
+            Toast.makeText(this, "Cidade nula!", Toast.LENGTH_SHORT).show();
         }
 
         //Estado
@@ -187,7 +189,37 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutEstado.setErrorEnabled(false);
             }
         } else {
-            Toast.makeText(this, "Estado Nulo!", Toast.LENGTH_SHORT).show();
+            layoutEstado.setErrorEnabled(true);
+            Toast.makeText(this, "Estado nulo!", Toast.LENGTH_SHORT).show();
+        }
+
+
+        //Produto
+        if (inputProduto.getText() != null) {
+            produto = inputProduto.getText().toString();
+            if (produto.isEmpty()) {
+                layoutProduto.setErrorEnabled(true);
+                layoutProduto.setError("preencha o produto");
+            } else {
+                layoutProduto.setErrorEnabled(false);
+            }
+        } else {
+            layoutProduto.setErrorEnabled(true);
+            Toast.makeText(this, "Produto nulo!", Toast.LENGTH_SHORT).show();
+        }
+
+        //Peso Produto
+        if (inputPesoProduto.getText() != null) {
+            pesoProduto = inputPesoProduto.getText().toString();
+            if (pesoProduto.isEmpty()) {
+                layoutPesoProduto.setErrorEnabled(true);
+                layoutPesoProduto.setError("preencha o peso");
+            } else {
+                layoutPesoProduto.setErrorEnabled(false);
+            }
+        } else {
+            layoutPesoProduto.setErrorEnabled(true);
+            Toast.makeText(this, "Peso do produyo nulo!", Toast.LENGTH_SHORT).show();
         }
 
         if (layoutNome.isErrorEnabled() ||
@@ -197,7 +229,10 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
                 layoutCEP.isErrorEnabled() ||
                 layoutBairro.isErrorEnabled() ||
                 layoutCidade.isErrorEnabled() ||
-                layoutEstado.isErrorEnabled()) {
+                layoutEstado.isErrorEnabled() ||
+                layoutProduto.isErrorEnabled() ||
+                layoutPesoProduto.isErrorEnabled()
+        ) {
             Toast.makeText(this, "Confira as Informações!", Toast.LENGTH_SHORT).show();
         } else {
             saveInfos();
@@ -213,6 +248,8 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
         inputCEP = findViewById(R.id.inputCEP);
         inputCidade = findViewById(R.id.inputCidade);
         inputEstado = findViewById(R.id.inputUF);
+        inputProduto = findViewById(R.id.inputProduto);
+        inputPesoProduto = findViewById(R.id.inputPesoProduto);
 
         layoutNome = findViewById(R.id.layoutInputNomeEmpresa);
         layoutCNPJ = findViewById(R.id.layoutInputCNPJ);
@@ -221,7 +258,9 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
         layoutBairro = findViewById(R.id.layoutInputBairro);
         layoutCEP = findViewById(R.id.layoutInputCEP);
         layoutCidade = findViewById(R.id.layoutInputCidade);
-        layoutEstado = findViewById(R.id.inputLayoutUF);
+        layoutEstado = findViewById(R.id.layoutInputUF);
+        layoutProduto = findViewById(R.id.layoutInputProduto);
+        layoutPesoProduto = findViewById(R.id.layoutInputPesoProduto);
 
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -231,6 +270,7 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
 
         inputCNPJ.addTextChangedListener(Mask.insert(inputCNPJ, "##.###.###/####-##"));
         inputCEP.addTextChangedListener(Mask.insert(inputCEP, "######-##"));
+        inputPesoProduto.addTextChangedListener(Mask.insert(inputPesoProduto));
     }
 
     public void saveInfos() {
@@ -244,6 +284,8 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
         editor.putString("cep", cep);
         editor.putString("cidade", cidade);
         editor.putString("estado", estado);
+        editor.putString("produto", produto);
+        editor.putInt("pesoProduto", formatValuesToInteger(pesoProduto));
         editor.apply();
         Toast.makeText(this, "Salvo com Sucesso!", Toast.LENGTH_SHORT).show();
         goToMain();
@@ -258,8 +300,6 @@ public class PainelAdministrativoActivity extends AppCompatActivity implements D
     @Override
     public void onBackPressed() {
         goToMain();
-        super.onBackPressed();
-
     }
 
     @Override

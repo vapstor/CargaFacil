@@ -49,6 +49,9 @@
     <string name="s_o_pedro_da_aldeia">São Pedro da Aldeia</string>
     <string name="rj">RJ</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="conectando">Conectando...</string>
+    <string name="limpar">Limpar</string>
+    <string name="resetar">resetar</string>
     <string-array name="ufs">
         <item>AC</item>
         <item>AL</item>

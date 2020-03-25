@@ -157,7 +157,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="4dp"
                         app:layout_constraintEnd_toStartOf="@+id/layoutInputCEP"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/layoutInputNumero">
@@ -176,6 +176,7 @@
                         android:id="@+id/layoutInputCEP"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/layoutInputBairro"
                         app:layout_constraintTop_toTopOf="@+id/layoutInputBairro">
@@ -196,7 +197,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        app:layout_constraintEnd_toStartOf="@+id/inputLayoutUF"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutInputUF"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/layoutInputCEP">
 
@@ -211,9 +212,9 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/inputLayoutUF"
+                        android:id="@+id/layoutInputUF"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                        android:layout_width="75dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:hint="@string/uf"
                         android:theme="@style/Spinner"
@@ -238,20 +239,61 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutInputProduto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="4dp"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutInputPesoProduto"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutInputCidade">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/inputProduto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:hint="Produto"
+                            android:inputType="text"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutInputPesoProduto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/layoutInputProduto"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutInputUF">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/inputPesoProduto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:hint="Peso do Produto"
+                            android:inputType="number"
+                            android:maxLength="7"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button"
                         style="@style/OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="12dp"
                         android:drawableStart="@drawable/ic_save"
                         android:drawablePadding="8dp"
                         android:onClick="validateFields"
                         android:text="@string/salvar"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/inputLayoutUF"
-                        app:layout_constraintTop_toBottomOf="@+id/layoutInputCidade" />
+                        app:layout_constraintEnd_toEndOf="@+id/layoutInputUF"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutInputPesoProduto" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -269,5 +311,4 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/menu_nav" />
-
 </androidx.drawerlayout.widget.DrawerLayout>
