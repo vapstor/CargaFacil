@@ -13,7 +13,7 @@
 
 ## 📋 Briefing
 
-  Aplicativo para emitir notas não fiscais através de balanças bluetooth.
+  Aplicativo para emitir notas não fiscais através de impressoras bluetooth.
 
 
 ## 📖 Requirements
