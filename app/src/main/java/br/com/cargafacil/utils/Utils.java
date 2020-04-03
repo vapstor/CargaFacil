@@ -10,8 +10,9 @@ public abstract class Utils {
 
     public final static String CONFIG_FILE = "CONFIG_FILE";
     public final static String MY_LOG_TAG = "VAPSTOR";
-    public final static int MY_PERMISSION_REQUEST_USE_BLUETOOTH = 10;
     public static long elapsedTime = 0;
+    public final static int MY_PERMISSION_REQUEST_USE_BLUETOOTH = 10;
+
 
     final byte[][] byteCommands = {
             { 0x1b, 0x40, 0x0a },// 复位打印机

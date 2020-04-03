@@ -532,17 +532,18 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
                     if (clean.length() < 4) {
                         clean = clean + hhmm.substring(clean.length());
-                    } else {
-                        //This part makes sure that when we finish entering numbers
-                        //the date is correct, fixing it otherwise
-                        int hours = Integer.parseInt(clean.substring(0, 2));
-                        int minutes = Integer.parseInt(clean.substring(2, 4));
-
-                        minutes = (minutes < 1) ? 0 : minutes > 59 ? 00 : minutes;
-                        cal.set(Calendar.MINUTE, minutes);
-                        hours = (hours > cal.getActualMaximum(Calendar.HOUR_OF_DAY)) ? cal.getActualMaximum(Calendar.HOUR_OF_DAY) : hours;
-                        clean = String.format(Locale.getDefault(), "%02d%02d", hours, minutes);
                     }
+//                    else {
+//                        //This part makes sure that when we finish entering numbers
+//                        //the date is correct, fixing it otherwise
+//                        int hours = Integer.parseInt(clean.substring(0, 2));
+//                        int minutes = Integer.parseInt(clean.substring(2, 4));
+//
+//                        minutes = (minutes < 1) ? 0 : minutes > 59 ? 00 : minutes;
+//                        cal.set(Calendar.MINUTE, minutes);
+//                        hours = (hours > cal.getActualMaximum(Calendar.HOUR_OF_DAY)) ? cal.getActualMaximum(Calendar.HOUR_OF_DAY) : hours;
+//                        clean = String.format(Locale.getDefault(), "%02d%02d", hours, minutes);
+//                    }
 
                     clean = String.format(Locale.getDefault(), "%s:%s", clean.substring(0, 2), clean.substring(2, 4));
 
