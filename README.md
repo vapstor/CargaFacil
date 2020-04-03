@@ -39,7 +39,7 @@
 - [x] Criar repositório no Github
 - [x] Criar SplashScreen
 - [x] Utilizar Fundamentos do Material Design
-- [ ] Realizar Conexão Via Bluetooth à impressora
+- [x] Realizar Conexão Via Bluetooth à impressora
 
 * Desenvolver HomePage ["HOME"]
 
@@ -53,32 +53,32 @@
   -  [x] Configurar cálculo para valores do Input e consequentemente renderização
   -  [x] Configurar botões de Menu:
         - [x] Iniciar Nova Pesagem
-        - [ ] Calculadora
-        - [ ] Histórico
+        - [ ] ~Calculadora~
+        - [ ] ~Histórico~
         - [x] Administrativo
       
 * Desenvolver Tela de Iniciar Nova Pesagem
   - [x] Implementar inputs e validações
   - [x] Cálculo de Pesagem Líquida
-  - [ ] Cálculo de Volume
+  - [x] Cálculo de Volume
 
 * Desenvolver Tela de Conexão à Impressora
-  - [ ] Interface Bluetooth Serial
-  - [ ] Auto-Conexão [com pin '1234']
-  - [ ] Conexão ao Dispositivo
+  - [x] Interface Bluetooth Serial
+  - [x] Auto-Conexão [com pin '1234']
+  - [x] Conexão ao Dispositivo
   
 * Desenvolver Tela Calculadora
-  - [ ] Implementar TextInputsLayouts para previsão de cálculo
-  - [ ] Configurar Inputs para cálculo sair correto
+  - [ ] ~Implementar TextInputsLayouts para previsão de cálculo~
+  - [ ] ~Configurar Inputs para cálculo sair correto~
   
 * Desenvolver Tela  de Histórico
-  - [ ] Implementar RecyclerView com Model de Pesagem
-  - [ ] Implementar PopUp com detalhes da Pesagem
-  - [ ] Implementar Função Excluir com Swipe
+  - [ ] ~Implementar RecyclerView com Model de Pesagem~
+  - [ ] ~Implementar PopUp com detalhes da Pesagem~
+  - [ ] ~Implementar Função Excluir com Swipe~
   
 * Desenvolver Tela Administrativa
   - [x] Implementar tela de login com Senha
-  - [ ] Validar tela de login
+  - [x] Validar tela de login
   - [x] Implementar TextLayoutsInputs Para Edição dos Dados da Empresa
   - [x] Validar e Configurar novos dados em SharedPreferences
 
